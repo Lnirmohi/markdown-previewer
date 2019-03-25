@@ -28,7 +28,7 @@ html, body {
   background: #E7E7E5;
 }
 
-#editor div:first-child, #preview {
+#editor div:first-child {
   padding: 10px 20px 0;
 }
 
@@ -42,13 +42,6 @@ html, body {
   letter-spacing: 1.5px;
 }
 
-#preview ul {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  list-style: none;
-}
-
 textarea {
   background: #E7E7E5;
   font-size: 14px;
@@ -56,20 +49,10 @@ textarea {
   border: none;
   padding: 18px 16px;
   font-family:SelawikRegular;
+  height: 100%;
 }
 
 textarea:focus {
-  background: #E9E9E9;
+  background: #ECECEC;
   outline: none;
-}
-
-#preview {
-  flex-grow: 8;
-  background: white;
-}
-
-#project-name {
-  font-family: Montserrat;
-  font-weight: 400;
-  font-size: 25px;
 }

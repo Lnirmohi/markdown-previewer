@@ -1,0 +1,31 @@
+#preview {
+    padding: 10px 20px 0;
+}
+
+.sub-heading {
+    line-height: 30px;
+    color: #272727;
+    font-family: Montserrat;
+    font-weight: 550;
+    text-decoration: underline;
+    text-underline-position: under;
+    letter-spacing: 1.5px;
+}
+
+#preview ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    list-style: none;
+}
+
+#preview {
+    flex-grow: 8;
+    background: white;
+}
+
+#project-name {
+    font-family: Montserrat;
+    font-weight: 400;
+    font-size: 25px;
+}

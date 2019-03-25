@@ -1,37 +1,30 @@
 import React from 'react';
+import {Preview} from './Preview.js'
 import './App.css';
 
-const App = () => {
-  return (
-    <div id="main">
-        
-      <Editor />  
-      <Preview />
-    
-    </div>
-  );
-}
+class App extends React.Component{
+  
+  constructor(props){
+    super(props);
 
-const Editor = () => {
+    this.state = {
+
+    };
+  }
+
+  render() {
     return (
-      <div id="editor">
-        <div class="sub-heading">EDITOR</div>
-        <textarea></textarea>
-      </div>
-    );
-};
-
-const Preview = () => {
-  return (
-      <div id="preview">
-        <ul>
-          <li class="sub-heading">PREVIEWER</li>
-          <li id="project-name">MARKDOWN PREVIEWER</li>
-        </ul>
-        <div>
+      <div id="main">
+      
+        <div id="editor">
+          <div className="sub-heading">EDITOR</div>
+          <textarea></textarea>
         </div>
+
+        <Preview />  
       </div>
-    );
-};
+    )
+  }
+}
 
 export default App;
