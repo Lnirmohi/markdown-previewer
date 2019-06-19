@@ -1,5 +1,5 @@
 import React from 'react';
-import {Preview} from './Preview.js'
+import {Preview} from './Preview.js';
 import './App.css';
 
 class App extends React.Component{
@@ -23,7 +23,7 @@ class App extends React.Component{
 
         <Preview />  
       </div>
-    )
+    );
   }
 }
 
