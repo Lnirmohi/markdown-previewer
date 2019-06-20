@@ -14,11 +14,11 @@ class App extends React.Component{
 
   render() {
     return (
-      <div id="main">
+      <div className="flex flex-direction-row height-full" id="main">
       
-        <div id="editor">
-          <div className="sub-heading">EDITOR</div>
-          <textarea></textarea>
+        <div className="flex flex-direction-column" id="editor">
+          <div className="sub-heading sub-heading-padding">EDITOR</div>
+          <textarea className="textarea-font height-full" id="textarea"></textarea>
         </div>
 
         <Preview />  
