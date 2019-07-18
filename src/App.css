@@ -62,7 +62,7 @@ html, body {
   padding: 10px 20px 0;
 }
 
-textarea {
+#textarea {
   background: var(--text-area-bg);
   font-size: 14px;
   border: none;
@@ -70,6 +70,6 @@ textarea {
   font-family:SelawikRegular;
 }
 
-textarea:focus {
+#textarea:focus {
   background: #ECECEC;
 }
