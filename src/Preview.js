@@ -20,70 +20,27 @@ export class Preview extends React.Component{
     
     let currentMarkup = [...this.state.rawMarkup];
 
+    /* 
+    *
+    */
     if(newMarkup[newMarkup.length - 1] === '' || newMarkup === currentMarkup) return;
 
-    this.createObjOfAbsentElements(newMarkup, currentMarkup);     
-  }
-
-  createObjOfAbsentElements(newMarkup = [], currentMarkup = []) {
-    
-    let absentInRawMarkup = {
-      elements: [],
-      indexOfElements: []
-    };
-    
-    newMarkup.forEach((element, index) => {
-      
-      if(currentMarkup.includes(element) === false) {
-        absentInRawMarkup.elements.push(element);
-        absentInRawMarkup.indexOfElements.push(index);
-      }
-    });
-
-    this.processAbsentElement(absentInRawMarkup);
-  }
-
-  processAbsentElement(absentInRawMarkup = {}) {
-
-    let processedElements = {
-      
-      elements: absentInRawMarkup.elements.map(element => 
-      
-        processMarkup(element)
-      ),
-      indexes:[...absentInRawMarkup.indexOfElements]
-    };
-
-    this.addChangedElementsToCurrentMarkup(processedElements);
-  }
-
-  addChangedElementsToCurrentMarkup(processedElements) {
-
-    let currentMarkup = [...this.state.rawMarkup];
-
     outerloop:
-    for (let i = 0; i < processedElements.elements.length; i++) {
+    for (let i = 0; i < newMarkup.length; i++) {
       
-      for (let j = 0; j < processedElements.indexes.length; j++) {
+      for (let j = 0; j < currentMarkup.length; j++) {
 
-        if( i === j) {
+        if(newMarkup[i] !== currentMarkup[j]) {
 
-          currentMarkup.splice(
-            processedElements.indexes[j],
-            1,
-            processedElements.elements[i]
-          );
+          let createdElement = processMarkup(newMarkup[i])
 
-          continue outerloop;
-        }
+          currentMarkup.splice(j, 1, createdElement);
+          
+          break outerloop;
+        } 
       }
     }
-
-    this.addCurrentMarkupToState(currentMarkup);
-  }
-
-  addCurrentMarkupToState(currentMarkup) {
-
+    
     this.setState({
       convertedHTMLElement: [...currentMarkup]
     });
